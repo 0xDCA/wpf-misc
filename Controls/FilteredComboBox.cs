@@ -13,17 +13,17 @@ using System.Globalization;
 
 namespace WpfMisc.Controls
 {
-	/// <summary>
+    /// <summary>
     /// Provides a ComboBox with filtering.
     /// When the user types a text, this ComboBox will show only the items which contain that text in any
-    ///	part of the shown string (using a case insensitive comparision).
-	/// This control will only work if your items are strings or if you use "DisplayMemberPath" property
+    /// part of the shown string (using a case insensitive comparision).
+    /// This control will only work if your items are strings or if you use "DisplayMemberPath" property
     /// 
     /// <example>
-	/// Add xmlns:view="clr-namespace:WpfMisc.Controls" to your Window or any parent of this control, and use
+    /// Add xmlns:view="clr-namespace:WpfMisc.Controls" to your Window or any parent of this control, and use
     /// <code><![CDATA[
-	///  <view:FilteredComboBox ItemsSource="{Binding MyItemsSource}"/>
-	/// ]]></code>
+    ///  <view:FilteredComboBox ItemsSource="{Binding MyItemsSource}"/>
+    /// ]]></code>
     /// </example>
     /// </summary>
     public class FilteredComboBox : ComboBox
@@ -127,8 +127,8 @@ namespace WpfMisc.Controls
             if (baseValue is ICollectionView)
                 return baseValue;
 
-			// Return a new CollectionView, so this ComboBox does not affect (and is not affected)
-			// other controls which use the default CollectionView
+            // Return a new CollectionView, so this ComboBox does not affect (and is not affected)
+            // other controls which use the default CollectionView
             return new CollectionViewSource()
             {
                 Source = baseValue
@@ -166,7 +166,7 @@ namespace WpfMisc.Controls
         private void ProccessScheduledFiltering()
         {
             // When we reset selection or update the filter, the text gets erased,
-			// so let's save it before making any change
+            // so let's save it before making any change
             string oldText = this.Text;
             SelectedItem = null;
             Text = oldText;
