@@ -10,6 +10,9 @@ namespace WpfMisc.Attached
     /// <summary>
     /// Contains attached properties for a Grid object, to automatically set Grid.Row and Grid.Column
     /// on each of its children, based on XAML order.
+    /// This is particulary useful when editing large forms, where you would have to manually adapt
+    /// the Grid.Row and Grid.Column properties on many elements, each time you move one part of your
+    /// form.
     /// 
     /// This class respects the Grid.ColumnSpan property, and will ignore every child element with
     /// Row or Column set manually.
